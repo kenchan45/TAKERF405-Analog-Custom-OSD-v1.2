@@ -1,9 +1,0 @@
-# Run AFTER flashing the custom firmware and AFTER final OSD positioning.
-# Existing positions: Left x=7,y=11 / Right x=15,y=11, profile 1.
-# +16384 sets OSD element Type 2 without moving the element.
-set osd_displayport_device = AUTO
-set vcd_video_system = PAL
-set osd_framerate_hz = 60
-set osd_stick_overlay_left_pos = 18791
-set osd_stick_overlay_right_pos = 18799
-save
