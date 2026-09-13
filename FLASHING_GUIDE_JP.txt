@@ -1,0 +1,20 @@
+TAKERF405 Analog Custom OSD v1.2 - 実機導入手順
+
+重要:
+- プロペラを外して作業する。
+- 元の diff all を保存しておく。
+- このCustom FWは実験版。まずベンチでジャイロ、受信機、モーター順、OSDを確認してから飛ばす。
+
+1) GitHub Actionsで生成された TAKERF405-custom-osd-ready.zip を展開。
+2) 中の .hex をBetaflight Configurator > Firmware Flasher > Load Firmware [Local] から選ぶ。
+3) Full chip eraseを有効にしてFlash Firmware。
+4) 起動後、保存済みdiff allを必要に応じて復元し、モーター順・受信機・ジャイロ向きを必ず確認。
+5) OSDタブ > Font Managerで betaflight_kiss_stick.mcm を読み込み、MAX7456へUpload Font。
+6) CLIで enable_kiss_overlay_pal.cli の内容を貼り付ける。
+7) 再起動後、Stick Overlayを確認。CustomはType 2、標準はType 1。
+
+純正Stick Overlayへ戻すだけなら restore_stock_overlay.cli をCLIへ貼る。
+
+注意:
+- Font Managerで別のフォントを書き込むと0xA0-0xB7が上書きされ、Custom cursorは文字化けする。その場合はbetaflight_kiss_stick.mcmを再アップロード。
+- OSD Configurator上でStick Overlayをドラッグした場合、Type 2情報が戻る可能性があるので、位置調整後にenable_kiss_overlay_pal.cliをもう一度実行する。

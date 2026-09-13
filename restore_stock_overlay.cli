@@ -1,0 +1,4 @@
+# Restore Stick Overlay Type 1 at the user's current positions.
+set osd_stick_overlay_left_pos = 2407
+set osd_stick_overlay_right_pos = 2415
+save
